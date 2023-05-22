@@ -1,9 +1,8 @@
 const chatForm = document.querySelector('.chat-form');
 const chatBox = document.querySelector('.chat');
-let url = 'http://127.0.0.1:5000/process_data';
+let url = '/process_data';
 const typingIndicator = document.querySelector('.typing-indicator');
 const langSwitch = document.getElementById('lang-switch');
-
 
 chatForm.addEventListener('submit', (event) => {
   let answer;
@@ -15,23 +14,23 @@ chatForm.addEventListener('submit', (event) => {
     question: message,
     language: 'english'
   };
-  fetch('http://127.0.0.1:5000/process_data', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)  
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
   })
   .then(response => response.json())
   .then(answer => {
     stopTyping();
     appendChatBox('bot', answer["answer"]);
-    console.log("The answer is retrieved sucessfuly !")
-    })
+    console.log("The answer is retrieved successfully!");
+  })
   .catch(error => {
     console.error('Error:', error);
     stopTyping();
-    appendChatBox('bot', "I'm sorry, I couldn't find the answer on Wikipedia ");
+    appendChatBox('bot', "I'm sorry, I couldn't find the answer on Wikipedia");
   });
   event.target.reset();
 });
@@ -42,15 +41,13 @@ function appendChatBox(userType, message) {
   chatBubble.classList.add('chat-bubble');
   chatBubble.classList.add(userType);
   chatBubble.textContent = message;
-  chatBoxDiv.classList.add('chat-box-'+userType);
+  chatBoxDiv.classList.add('chat-box-' + userType);
   chatBoxDiv.appendChild(chatBubble);
   chatBox.appendChild(chatBoxDiv);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-
-
-function appendTyping(){
+function appendTyping() {
   const divTyping = document.createElement('div');
   divTyping.classList.add("typing-indicator");
   const span1 = document.createElement('span');
@@ -63,18 +60,12 @@ function appendTyping(){
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-
-function showTypingIndicator() {
-  typingIndicator.style.display = 'flex';
-}
-
 function startTyping() {
   showTypingIndicator();
   setTimeout(() => {
     console.log('Bot is typing...');
   }, 1000);
 }
-
 
 function stopTyping() {
   const typingIndicator = document.querySelector('.typing-indicator');

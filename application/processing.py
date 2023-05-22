@@ -96,13 +96,13 @@ def get_answer(question, context, language='english'):
 
 def get_best_answer(query: str, num_articles_search: int, characters_per_article: int, language: str = 'english'):
     print("Retrieving top documents ...")
-    #docs = get_articles(query, num_articles_search, characters_per_article, language=language)
-    docs = ["hello world"]
+    docs = get_articles(query, num_articles_search, characters_per_article, language=language)
+    #print(docs)
     answers = {}
     i = 1
     for doc in docs:
         print('Searching for answer in doc', i)
-        question, context = query, doc
+        question, context = query, docs[doc]
         result = get_answer(question, context, language=language)
         if result['answer'] in answers:
             answers[result['answer']] = max(answers[result['answer']], result['score'])
