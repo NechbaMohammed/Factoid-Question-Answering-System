@@ -5,13 +5,13 @@ import random
 import wikipedia as wiki
 import os
 
-API_URL_ENG = os.getenv("RENDER_API_URL_ENG")
-API_URL_AR = os.getenv("RENDER_API_URL_AR")
-headers = {"Authorization": "Bearer " + os.getenv("RENDER_HUGGINGFACE_API_KEY")}
+#API_URL_ENG = os.getenv("RENDER_API_URL_ENG")
+#API_URL_AR = os.getenv("RENDER_API_URL_AR")
+#headers = {"Authorization": "Bearer " + os.getenv("RENDER_HUGGINGFACE_API_KEY")}
 
-#API_URL_ENG = "https://api-inference.huggingface.co/models/distilbert-base-cased-distilled-squad"
-#API_URL_AR = "https://api-inference.huggingface.co/models/ZeyadAhmed/AraElectra-Arabic-SQuADv2-QA"
-#headers = {"Authorization": "Bearer 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"}
+API_URL_ENG = "https://api-inference.huggingface.co/models/distilbert-base-cased-distilled-squad"
+API_URL_AR = "https://api-inference.huggingface.co/models/ZeyadAhmed/AraElectra-Arabic-SQuADv2-QA"
+headers = {"Authorization": "Bearer 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"}
 
 """
 This module contains one function, `get_articles`, which performs document retrieval:
@@ -96,13 +96,13 @@ def get_answer(question, context, language='english'):
 
 def get_best_answer(query: str, num_articles_search: int, characters_per_article: int, language: str = 'english'):
     print("Retrieving top documents ...")
-    docs = get_articles(query, num_articles_search, characters_per_article, language=language)
-
+    #docs = get_articles(query, num_articles_search, characters_per_article, language=language)
+    docs = ["hello world"]
     answers = {}
     i = 1
     for doc in docs:
         print('Searching for answer in doc', i)
-        question, context = query, docs[doc]
+        question, context = query, doc
         result = get_answer(question, context, language=language)
         if result['answer'] in answers:
             answers[result['answer']] = max(answers[result['answer']], result['score'])
