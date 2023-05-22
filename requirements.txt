@@ -11,7 +11,6 @@ MarkupSafe==2.1.2
 requests==2.29.0
 soupsieve==2.4.1
 urllib3==1.26.15
-logging==0.4.9.6
 Werkzeug==2.2.3
 wikipedia==1.4.0
 gunicorn==20.1.0
