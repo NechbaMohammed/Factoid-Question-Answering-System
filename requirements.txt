@@ -1,3 +1,4 @@
+logging==0.4.9.6
 beautifulsoup4==4.12.2
 blinker==1.6.2
 certifi==2022.12.7
@@ -14,4 +15,3 @@ urllib3==1.26.15
 Werkzeug==2.2.3
 wikipedia==1.4.0
 gunicorn==20.1.0
-logging==23.1.2
