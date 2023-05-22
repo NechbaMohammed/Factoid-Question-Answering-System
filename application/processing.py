@@ -112,4 +112,4 @@ def get_best_answer(query: str, num_articles_search: int, characters_per_article
 
     answers_l = sorted(answers.items(), key=lambda x: x[1], reverse=True)
     
-    return 0
+    return answers_l[0][0]
