@@ -7,10 +7,11 @@ import os
 
 API_URL_ENG = os.getenv("RENDER_API_URL_ENG")
 API_URL_AR = os.getenv("RENDER_API_URL_AR")
+headers = {"Authorization": "Bearer " + os.getenv("RENDER_HUGGINGFACE_API_KEY")}
 
 #API_URL_ENG = "https://api-inference.huggingface.co/models/distilbert-base-cased-distilled-squad"
 #API_URL_AR = "https://api-inference.huggingface.co/models/ZeyadAhmed/AraElectra-Arabic-SQuADv2-QA"
-headers = {"Authorization": "Bearer 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"}
+#headers = {"Authorization": "Bearer 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"}
 
 """
 This module contains one function, `get_articles`, which performs document retrieval:
