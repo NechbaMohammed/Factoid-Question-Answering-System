@@ -82,13 +82,16 @@ def query(payload, language='english'):
 
 
 def get_answer(question, context, language='english'):
-        result = query({
+    result = query({
         "inputs": {
             "question": question,
             "context": context
-        },}, language=language)
-       
-        return {"answer": result["answer"], "score": result["score"]}
+        },
+    }, language=language)
+
+    logging.debug("API response: {}".format(result))  # Ajouter cette ligne pour enregistrer la réponse de l'API dans les logs
+
+    return {"answer": result["answer"], "score": result["score"]}
 
 
 def get_best_answer(query: str, num_articles_search: int, characters_per_article: int, language: str = 'english'):
