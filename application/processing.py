@@ -82,7 +82,7 @@ def get_answer(question, context, language='english'):
             "question": question,
             "context": context
         },}, language=language)
-        print(result["answer"])
+       
         return {"answer": result["answer"], "score": result["score"]}
 
 
