@@ -3,9 +3,13 @@ from typing import List
 import logging
 import random
 import wikipedia as wiki
+import os
 
-API_URL_ENG = "https://api-inference.huggingface.co/models/distilbert-base-cased-distilled-squad"
-API_URL_AR = "https://api-inference.huggingface.co/models/ZeyadAhmed/AraElectra-Arabic-SQuADv2-QA"
+API_URL_ENG = os.getenv("RENDER_API_URL_ENG")
+API_URL_AR = os.getenv("RENDER_API_URL_AR")
+
+#API_URL_ENG = "https://api-inference.huggingface.co/models/distilbert-base-cased-distilled-squad"
+#API_URL_AR = "https://api-inference.huggingface.co/models/ZeyadAhmed/AraElectra-Arabic-SQuADv2-QA"
 headers = {"Authorization": "Bearer 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"}
 
 """
