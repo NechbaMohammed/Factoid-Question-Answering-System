@@ -26,6 +26,7 @@ The Factoid Question Answering System utilizes a combination of Natural Language
 ![logo](fig/fig1.png)
 
 ## Document Retriever
+Document Retriever in QA is usually implemented using TF-IDF, which matches keywords between the question and the documents representing them as sparse vectors.
 ![logo](fig/fig3.png)
 
 ## Document Reader
@@ -34,8 +35,6 @@ The Factoid Question Answering System utilizes a combination of Natural Language
 ## Sequence Diagram
 ![logo](fig/fig2.png)
 
-## Technologies Used
-[List the key technologies, frameworks, and libraries used in the project. Mention the programming languages and any external APIs or tools integrated into the system.]
 
 ## Demo
 You can experience the Factoid Question Answering System using the following links:
@@ -45,7 +44,7 @@ You can experience the Factoid Question Answering System using the following lin
 
 Please feel free to try out the system with your factoid questions in both Arabic and English languages.
 
-[Watch the Demo Video](fig/demo.mp4)
+[Watch the Demo Video](https://drive.google.com/file/d/18HBl332feEmRSQztoxuiUoLVKbGRJfsd/view)
 
 ## Installation
 To install the project, you can use the following command :
